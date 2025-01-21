@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "classnames": "^2.5.1",
     "contentful": "^11.4.4",
     "marked": "^15.0.6",
     "next": "14.2.23",
