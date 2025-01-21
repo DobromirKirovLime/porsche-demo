@@ -1,6 +1,6 @@
 import { getEntriesByType } from "@/services/contentful";
 import { HomePageFields } from "@/types";
-import { Heading, Paragraph, Box, Card } from "@/components";
+import { Heading, Paragraph, Card } from "@/components";
 
 export default async function Home() {
   const homePageRes = await getEntriesByType("home");

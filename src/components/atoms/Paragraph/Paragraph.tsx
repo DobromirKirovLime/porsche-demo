@@ -1,6 +1,6 @@
 import { ComponentPropsWithRef } from "react";
 
-interface ParagraphProps extends ComponentPropsWithRef<"p"> {}
+type ParagraphProps = ComponentPropsWithRef<"p">;
 
 export const Paragraph = ({ children, ...rest }: ParagraphProps) => {
   return <p {...rest}>{children}</p>;

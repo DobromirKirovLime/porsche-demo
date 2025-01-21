@@ -14,13 +14,14 @@ export const Navigation = ({
   nextLinkProps,
   routes,
 }: NavigationProps) => {
-  console.log("nextLinkProps", nextLinkProps?.className);
   return (
     <nav {...navProps}>
       <ul {...ulProps}>
         {routes.map((route, idx) => (
           <li key={idx + route.href}>
-            <Link href={route.href} children={route.label} {...nextLinkProps} />
+            <Link href={route.href} {...nextLinkProps}>
+              {route.label}
+            </Link>
           </li>
         ))}
       </ul>
