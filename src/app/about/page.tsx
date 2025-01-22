@@ -1,12 +1,12 @@
-import { Box, Heading, Paragraph } from "@/components";
-import { getEntriesByType } from "@/services/contentful";
-import { asyncHandler } from "@/utils/asyncHandler";
-import { AboutPageType } from "@/types";
-import { marked } from "marked";
+import { Box, Heading, Paragraph } from '@/components';
+import { getEntriesByType } from '@/services/contentful';
+import { asyncHandler } from '@/utils/asyncHandler';
+import { AboutPageType } from '@/types';
+import { marked } from 'marked';
 
 export default async function AboutPage() {
   const { data: aboutPageData, error: aboutPageError } = await asyncHandler(
-    getEntriesByType("about")
+    getEntriesByType('about')
   );
 
   if (aboutPageError || !aboutPageData) {
@@ -27,7 +27,7 @@ export default async function AboutPage() {
       <Paragraph>{subTitle}</Paragraph>
       <Box
         dangerouslySetInnerHTML={{
-          __html: marked.parse(content),
+          __html: marked.parse(content)
         }}
       />
     </>

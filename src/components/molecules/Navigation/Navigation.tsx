@@ -1,18 +1,18 @@
-import React, { ComponentPropsWithRef } from "react";
-import Link from "next/link";
+import React, { ComponentPropsWithRef } from 'react';
+import Link from 'next/link';
 
 interface NavigationProps {
   routes: { href: string; label: string }[];
-  navProps?: ComponentPropsWithRef<"nav">;
-  ulProps?: ComponentPropsWithRef<"ul">;
-  nextLinkProps?: ComponentPropsWithRef<"a">;
+  navProps?: ComponentPropsWithRef<'nav'>;
+  ulProps?: ComponentPropsWithRef<'ul'>;
+  nextLinkProps?: ComponentPropsWithRef<'a'>;
 }
 
 export const Navigation = ({
   navProps,
   ulProps,
   nextLinkProps,
-  routes,
+  routes
 }: NavigationProps) => {
   return (
     <nav {...navProps}>

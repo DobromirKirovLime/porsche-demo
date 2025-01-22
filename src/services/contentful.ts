@@ -1,4 +1,4 @@
-import { createContentClient } from "@/config/contentful";
+import { createContentClient } from '@/config/contentful';
 
 const client = createContentClient();
 

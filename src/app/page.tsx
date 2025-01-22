@@ -1,11 +1,11 @@
-import { Heading, Paragraph, Card, Box } from "@/components";
-import { getEntriesByType } from "@/services/contentful";
-import { asyncHandler } from "@/utils/asyncHandler";
-import { HomePageType } from "@/types";
+import { Heading, Paragraph, Card, Box } from '@/components';
+import { getEntriesByType } from '@/services/contentful';
+import { asyncHandler } from '@/utils/asyncHandler';
+import { HomePageType } from '@/types';
 
 export default async function Home() {
   const { data: homePageData, error: homePageError } = await asyncHandler(
-    getEntriesByType("home0")
+    getEntriesByType('home0')
   );
 
   if (homePageError || !homePageData) {
@@ -21,7 +21,7 @@ export default async function Home() {
   const {
     title: pageTitle,
     subTitle,
-    image,
+    image
   } = homePageData[0].fields as HomePageType;
   const { title: imageTitle, description, file } = image.fields;
   const { width, height } = file.details.image;
