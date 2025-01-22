@@ -1,4 +1,4 @@
-export type HomePageFields = {
+export type HomePageType = {
   title: string;
   subTitle: string;
   image: ContentfulImage;
@@ -21,4 +21,10 @@ export type ContentfulImage = {
       contentType: string;
     };
   };
+};
+
+export type AboutPageType = {
+  title: string;
+  subTitle: string;
+  content: string;
 };
