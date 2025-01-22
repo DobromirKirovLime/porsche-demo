@@ -5,7 +5,7 @@ import { HomePageType } from '@/types';
 
 export default async function Home() {
   const { data: homePageData, error: homePageError } = await asyncHandler(
-    getEntriesByType('home0')
+    getEntriesByType('home')
   );
 
   if (homePageError || !homePageData) {
