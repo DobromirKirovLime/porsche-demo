@@ -1,28 +1,19 @@
 import Image, { ImageProps } from 'next/image';
 import { Box, Paragraph } from '@/components';
+import styles from './card.module.scss';
 
 interface CardProps
   extends Pick<ImageProps, 'src' | 'width' | 'height' | 'priority'> {
   title: string;
   description: string;
-  customStyles?: React.CSSProperties;
 }
 
-export const Card = ({
-  customStyles,
-  title,
-  description,
-  ...rest
-}: CardProps) => {
+export const Card = ({ title, description, ...rest }: CardProps) => {
   return (
-    <Box style={{ textAlign: 'center', ...customStyles }}>
-      <Image alt={title} {...rest} />
-      <Paragraph style={{ fontWeight: 'bold', margin: '0.5rem 0' }}>
-        {title}
-      </Paragraph>
-      <Paragraph style={{ color: '#555', margin: '0.5rem 0' }}>
-        {description}
-      </Paragraph>
+    <Box className={styles.card}>
+      <Image alt={title} {...rest} className={styles.img} />
+      <Paragraph>{title}</Paragraph>
+      <Paragraph>{description}</Paragraph>
     </Box>
   );
 };

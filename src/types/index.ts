@@ -2,6 +2,7 @@ export type HomePageType = {
   title: string;
   subTitle: string;
   image: ContentfulImage;
+  images: ContentfulImage[];
 };
 
 export type ContentfulImage = {
