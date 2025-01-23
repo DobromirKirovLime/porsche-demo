@@ -20,21 +20,23 @@ export default async function Home() {
   }
 
   const { title: pageTitle, subTitle, image, images } = homePageData[0].fields;
-  const { title: imageTitle, description, file } = image?.fields!;
-  const { width, height } = file.details.image!;
+  const { title: imageTitle, description, file } = image?.fields || {};
+  const { width, height } = file?.details.image || {};
 
   return (
     <>
       <Heading>{pageTitle}</Heading>
       <Paragraph>{subTitle}</Paragraph>
-      <Card
-        title={imageTitle}
-        description={description}
-        src={`https:${file.url}`}
-        width={width}
-        height={height}
-        priority={true}
-      />
+      {imageTitle && description && file && (
+        <Card
+          title={imageTitle}
+          description={description}
+          src={`https:${file.url}`}
+          width={width}
+          height={height}
+          priority={true}
+        />
+      )}
 
       <Box className={styles.imgGrid}>
         {images?.map((img, idx) => {
