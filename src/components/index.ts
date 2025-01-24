@@ -1,9 +1,11 @@
 /** Organisms */
 export { Header } from './organisms/Header/Header';
+export { AddProduct } from './organisms/AddProduct/AddProduct';
 
 /** Molecules */
 export { Navigation } from './molecules/Navigation/Navigation';
 export { Card } from './molecules/Card/Card';
+export { Product } from './molecules/Product/Product';
 
 /** Atoms */
 export { Box } from './atoms/Box/Box';
