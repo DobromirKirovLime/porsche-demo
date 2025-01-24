@@ -4,7 +4,8 @@ import styles from './header.module.scss';
 export const Header = () => {
   const routes = [
     { href: '/', label: 'Logo' },
-    { href: '/about', label: 'About' }
+    { href: '/about', label: 'About' },
+    { href: '/products', label: 'Products' }
   ];
 
   return (
