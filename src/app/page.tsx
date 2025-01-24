@@ -1,7 +1,7 @@
 import { Heading, Paragraph, Card, Box } from '@/components';
 import { getEntriesByType } from '@/services/contentful';
 import { asyncHandler } from '@/utils/asyncHandler';
-import { TypeHomeFields } from '../../types/contentful';
+import { TypeHomeFields } from '../types/contentful';
 
 export default async function Home() {
   const { data: homePageData, error: homePageError } = await asyncHandler(

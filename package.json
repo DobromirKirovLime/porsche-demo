@@ -9,7 +9,7 @@
     "lint": "next lint",
     "typegen": "contentful-typescript-codegen --output @types/generated/contentful.d.ts",
     "cl-exp": "contentful space export --config contentful/export-config.json --management-token <ACCESS_TOKEN> --space-id <SPACE_ID>",
-    "cl-gen": "cf-content-types-generator contentful/export.json --out types/contentful"
+    "cl-gen": "cf-content-types-generator contentful/export.json --out src/types/contentful"
   },
   "dependencies": {
     "classnames": "^2.5.1",
