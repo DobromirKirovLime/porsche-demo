@@ -1,4 +1,4 @@
-import { Heading, Paragraph, Card, Box } from '@/components';
+import { Heading, Paragraph, Card, Box, ErrorText } from '@/components';
 import { getEntriesByType } from '@/services/contentful';
 import { asyncHandler } from '@/utils/asyncHandler';
 import { TypeHomeFields } from '../types/contentful';
@@ -9,13 +9,7 @@ export default async function Home() {
   );
 
   if (homePageError || !homePageData) {
-    return (
-      <Box>
-        <Heading>Error</Heading>
-        <Paragraph>Unable to load content. Please try again later.</Paragraph>
-        <Paragraph>{homePageError.message}</Paragraph>
-      </Box>
-    );
+    return <ErrorText message={homePageError.message} />;
   }
 
   const { title: pageTitle, subTitle, image, images } = homePageData[0].fields;
