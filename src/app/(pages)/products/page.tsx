@@ -1,6 +1,5 @@
 import { Box, AddProduct, Product } from '@/components';
 import { ProductType } from '@/types';
-import styles from './products.module.scss';
 
 export default async function Products() {
   const res = await fetch('https://fakestoreapi.com/products');
@@ -9,7 +8,7 @@ export default async function Products() {
   return (
     <>
       <AddProduct />
-      <Box className={styles.productsContainer}>
+      <Box wrapContent>
         {products.map((product) => (
           <Product key={product.id} {...product} withDetails={false} />
         ))}

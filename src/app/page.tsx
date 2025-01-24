@@ -2,7 +2,6 @@ import { Heading, Paragraph, Card, Box } from '@/components';
 import { getEntriesByType } from '@/services/contentful';
 import { asyncHandler } from '@/utils/asyncHandler';
 import { TypeHomeFields } from '../../types/contentful';
-import styles from './page.module.scss';
 
 export default async function Home() {
   const { data: homePageData, error: homePageError } = await asyncHandler(
@@ -38,7 +37,7 @@ export default async function Home() {
         />
       )}
 
-      <Box className={styles.imgGrid}>
+      <Box wrapContent>
         {images?.map((img, idx) => {
           const { title: imageTitle, description, file } = img.fields;
           const { width, height } = file.details.image!;
