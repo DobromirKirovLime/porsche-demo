@@ -38,12 +38,12 @@ export default async function Home() {
       )}
 
       <Box wrapContent>
-        {images?.map((img, idx) => {
+        {images?.map((img) => {
           const { title: imageTitle, description, file } = img.fields;
           const { width, height } = file.details.image!;
           return (
             <Card
-              key={idx}
+              key={img.sys.id}
               title={imageTitle}
               description={description}
               src={`https:${file.url}`}
