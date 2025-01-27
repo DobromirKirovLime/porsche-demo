@@ -1,2 +1,2 @@
-export type { TypeAbout, TypeAboutFields } from './TypeAbout';
-export type { TypeHome, TypeHomeFields } from './TypeHome';
+export type { TypeAbout, TypeAboutFields } from '@/types/contentful/TypeAbout';
+export type { TypeHome, TypeHomeFields } from '@/types/contentful/TypeHome';
