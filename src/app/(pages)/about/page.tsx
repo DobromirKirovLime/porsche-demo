@@ -1,8 +1,7 @@
-import { Box, Heading, Paragraph } from '@/components';
+import { ErrorText, Heading, Paragraph, RichTextRenderer } from '@/components';
 import { getEntriesByType } from '@/services/contentful';
 import { asyncHandler } from '@/utils/asyncHandler';
 import { AboutPageType } from '@/types';
-import { marked } from 'marked';
 
 export default async function AboutPage() {
   const { data: aboutPageData, error: aboutPageError } = await asyncHandler(
@@ -10,13 +9,7 @@ export default async function AboutPage() {
   );
 
   if (aboutPageError || !aboutPageData) {
-    return (
-      <Box>
-        <Heading>Error</Heading>
-        <Paragraph>Unable to load content. Please try again later.</Paragraph>
-        <Paragraph>{aboutPageError.message}</Paragraph>
-      </Box>
-    );
+    return <ErrorText message={aboutPageError.message} />;
   }
 
   const { title, subTitle, content } = aboutPageData[0].fields as AboutPageType;
@@ -25,11 +18,7 @@ export default async function AboutPage() {
     <>
       <Heading>{title}</Heading>
       <Paragraph>{subTitle}</Paragraph>
-      <Box
-        dangerouslySetInnerHTML={{
-          __html: marked.parse(content)
-        }}
-      />
+      <RichTextRenderer content={content} />
     </>
   );
 }

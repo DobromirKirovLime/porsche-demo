@@ -6,6 +6,7 @@ export { AddProduct } from './organisms/AddProduct/AddProduct';
 export { Navigation } from './molecules/Navigation/Navigation';
 export { Card } from './molecules/Card/Card';
 export { Product } from './molecules/Product/Product';
+export { RichTextRenderer } from './molecules/RichTextRenderer/RichTextRenderer';
 export { ErrorText } from './molecules/ErrorText/ErrorText';
 
 /** Atoms */
