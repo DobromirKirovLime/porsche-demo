@@ -1,9 +1,8 @@
 import { Box, AddProduct, Product } from '@/components';
-import { ProductType } from '@/types';
+import { getProducts } from '@/services/products';
 
 export default async function Products() {
-  const res = await fetch('https://fakestoreapi.com/products');
-  const products: ProductType[] = await res.json();
+  const products = await getProducts();
 
   return (
     <>

@@ -1,7 +1,7 @@
 'use server';
 
 import { asyncHandler } from '@/utils/asyncHandler';
-import { revalidatePath } from 'next/cache';
+import { revalidateTag } from 'next/cache';
 
 export async function addProduct(formData: FormData) {
   const constructedData = {
@@ -21,7 +21,7 @@ export async function addProduct(formData: FormData) {
 
   if (res) {
     const newProduct = await res.json();
-    revalidatePath('/products');
+    revalidateTag('all-products');
     return newProduct;
   } else {
     return error;
