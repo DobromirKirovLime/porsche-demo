@@ -8,16 +8,16 @@ interface RichTextRendererProps {
 
 export const RichTextRenderer = ({ content }: RichTextRendererProps) => {
   const components: Components = {
-    p: ({ node, children }) => (
+    p: ({ children }) => (
       <Paragraph style={{ marginBottom: '10px' }}>{children}</Paragraph>
     ),
-    h2: ({ node, children }) => (
+    h2: ({ children }) => (
       <Heading style={{ margin: '20px 0 20px 0' }} as="h2">
         {children}
       </Heading>
     ),
-    h3: ({ node, children }) => <Heading as="h3">{children}</Heading>,
-    li: ({ node, children }) => (
+    h3: ({ children }) => <Heading as="h3">{children}</Heading>,
+    li: ({ children }) => (
       <li style={{ margin: '0 0 10px 20px' }}>{children}</li>
     )
   };
