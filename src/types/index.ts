@@ -1,3 +1,6 @@
+export type { TypeAbout, TypeAboutFields } from './TypeAbout.js';
+export type { TypeHome, TypeHomeFields } from './TypeHome.js';
+
 export type HomePageType = {
   title: string;
   subTitle: string;
