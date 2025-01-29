@@ -1,5 +1,4 @@
 import { ComponentPropsWithRef } from 'react';
-import cx from 'classnames';
 import styles from './box.module.scss';
 
 interface BoxProps extends ComponentPropsWithRef<'div'> {
@@ -8,7 +7,7 @@ interface BoxProps extends ComponentPropsWithRef<'div'> {
 
 export const Box = ({ children, wrapContent, ...rest }: BoxProps) => {
   return (
-    <div className={cx(wrapContent ? styles.wrap : '')} {...rest}>
+    <div className={wrapContent ? styles.wrap : ''} {...rest}>
       {children}
     </div>
   );
