@@ -1,3 +1,19 @@
 {
-  "testBG": "BG"
+  "header": {
+    "logo": "Лого",
+    "about": "Относно",
+    "products": "Продукти"
+  },
+  "page": {
+    "products": {
+      "add": {
+        "button": "Добави продукт",
+        "title": "Заглавие",
+        "price": "Цена",
+        "desc": "Описание",
+        "category": "Категория",
+        "image": "Снимка"
+      }
+    }
+  }
 }

@@ -1,3 +1,19 @@
 {
-  "testEnUs": "testEN-US"
+  "header": {
+    "logo": "Logo",
+    "about": "About",
+    "products": "Products"
+  },
+  "page": {
+    "products": {
+      "add": {
+        "button": "Add product",
+        "title": "Title",
+        "price": "Price",
+        "desc": "Description",
+        "category": "Category",
+        "image": "Image"
+      }
+    }
+  }
 }

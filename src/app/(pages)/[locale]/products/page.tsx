@@ -1,7 +1,11 @@
 import { Box, Product, AddProduct } from '@/components';
 import { getProducts } from '@/services/products';
 
-export default async function Products() {
+type Props = {
+  params: { locale: string };
+};
+
+export default async function Products({ params }: Props) {
   const products = await getProducts();
 
   return (
@@ -9,7 +13,12 @@ export default async function Products() {
       <AddProduct />
       <Box wrapContent>
         {products.map((product) => (
-          <Product key={product.id} {...product} withDetails={false} />
+          <Product
+            key={product.id}
+            {...product}
+            locale={params.locale}
+            withDetails={false}
+          />
         ))}
       </Box>
     </>
