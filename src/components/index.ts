@@ -7,6 +7,7 @@ export { Navigation } from './molecules/Navigation/Navigation';
 export { Card } from './molecules/Card/Card';
 export { Product } from './molecules/Product/Product';
 export { RichTextRenderer } from './molecules/RichTextRenderer/RichTextRenderer';
+export { LocaleButton } from './molecules/LocaleButton/LocaleButton';
 export { ErrorText } from './molecules/ErrorText/ErrorText';
 
 /** Atoms */

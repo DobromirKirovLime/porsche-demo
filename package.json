@@ -16,6 +16,7 @@
     "contentful": "^9.3.7",
     "marked": "^15.0.6",
     "next": "14.2.23",
+    "next-intl": "^3.26.3",
     "react": "^18",
     "react-dom": "^18",
     "react-markdown": "^9.0.3"

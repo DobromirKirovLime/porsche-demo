@@ -3,9 +3,13 @@ import { getEntriesByType } from '@/services/contentful';
 import { asyncHandler } from '@/utils/asyncHandler';
 import { TypeHomeFields } from '@/types';
 
-export default async function Home() {
+type Props = {
+  params: { locale: string };
+};
+
+export default async function Home({ params }: Props) {
   const { data: homePageData, error: homePageError } = await asyncHandler(
-    getEntriesByType<TypeHomeFields>('home')
+    getEntriesByType<TypeHomeFields>('home', params.locale)
   );
 
   if (homePageError || !homePageData) {
