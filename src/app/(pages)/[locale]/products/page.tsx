@@ -1,4 +1,4 @@
-import { Box, Product } from '@/components';
+import { Box, Product, AddProduct } from '@/components';
 import { getProducts } from '@/services/products';
 
 export default async function Products() {
@@ -6,7 +6,7 @@ export default async function Products() {
 
   return (
     <>
-      {/* <AddProduct /> */}
+      <AddProduct />
       <Box wrapContent>
         {products.map((product) => (
           <Product key={product.id} {...product} withDetails={false} />
