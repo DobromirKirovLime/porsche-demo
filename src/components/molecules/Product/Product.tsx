@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 interface ProductProps extends ProductType {
   withDetails: boolean;
+  locale?: string;
 }
 
 export const Product = (props: ProductProps) => {
@@ -17,10 +18,12 @@ export const Product = (props: ProductProps) => {
     rating,
     category,
     description,
-    withDetails
+    withDetails,
+    locale
   } = props;
+
   return (
-    <Link href={`/products/${id}`}>
+    <Link href={`/${locale}/products/${id}`}>
       <Box className={styles.product}>
         <Image
           className={styles.img}

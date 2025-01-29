@@ -1,11 +1,12 @@
+'use server';
 import React, { ComponentPropsWithRef } from 'react';
-import Link from 'next/link';
+import Link, { LinkProps } from 'next/link';
 
 interface NavigationProps {
   routes: { href: string; label: string }[];
   navProps?: ComponentPropsWithRef<'nav'>;
   ulProps?: ComponentPropsWithRef<'ul'>;
-  nextLinkProps?: ComponentPropsWithRef<'a'>;
+  nextLinkProps?: ComponentPropsWithRef<'a'> & Omit<LinkProps, 'href'>;
 }
 
 export const Navigation = ({

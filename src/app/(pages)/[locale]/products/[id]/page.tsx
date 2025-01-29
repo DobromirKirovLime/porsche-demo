@@ -1,13 +1,12 @@
 import { Product } from '@/components';
-import { ProductType } from '@/types';
+import { getSingleProduct } from '@/services/products';
 
 export default async function SingleProduct({
   params
 }: {
   params: { id: string };
 }) {
-  const res = await fetch(`https://fakestoreapi.com/products/${params.id}`);
-  const singleProduct: ProductType = await res.json();
+  const singleProduct = await getSingleProduct(params.id);
 
   return <Product {...singleProduct} withDetails />;
 }

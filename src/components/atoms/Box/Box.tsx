@@ -1,7 +1,14 @@
 import { ComponentPropsWithRef } from 'react';
+import styles from './box.module.scss';
 
-type BoxProps = ComponentPropsWithRef<'div'>;
+interface BoxProps extends ComponentPropsWithRef<'div'> {
+  wrapContent?: boolean;
+}
 
-export const Box = ({ children, ...rest }: BoxProps) => {
-  return <div {...rest}>{children}</div>;
+export const Box = ({ children, wrapContent, ...rest }: BoxProps) => {
+  return (
+    <div className={wrapContent ? styles.wrap : ''} {...rest}>
+      {children}
+    </div>
+  );
 };

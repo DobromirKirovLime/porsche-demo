@@ -1,11 +1,18 @@
-import { Navigation } from '@/components';
+import { Navigation, LocaleButton } from '@/components';
 import styles from './header.module.scss';
+import { useTranslations } from 'next-intl';
 
-export const Header = () => {
+interface HeaderProps {
+  locale: string;
+}
+
+export const Header = ({ locale }: HeaderProps) => {
+  const t = useTranslations('header');
+
   const routes = [
-    { href: '/', label: 'Logo' },
-    { href: '/about', label: 'About' },
-    { href: '/products', label: 'Products' }
+    { href: `/${locale}/home`, label: t('logo') },
+    { href: `/${locale}/about`, label: t('about') },
+    { href: `/${locale}/products`, label: t('products') }
   ];
 
   return (
@@ -15,6 +22,7 @@ export const Header = () => {
         nextLinkProps={{ className: styles.route }}
         ulProps={{ className: styles.navigation }}
       />
+      <LocaleButton />
     </header>
   );
 };
