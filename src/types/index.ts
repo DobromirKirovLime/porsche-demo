@@ -1,3 +1,5 @@
+import { Metadata } from 'next';
+
 export type { TypeAbout, TypeAboutFields } from './TypeAbout.js';
 export type { TypeHome, TypeHomeFields } from './TypeHome.js';
 
@@ -6,6 +8,7 @@ export type HomePageType = {
   subTitle: string;
   image: ContentfulImage;
   images: ContentfulImage[];
+  metadata: Metadata;
 };
 
 export type ContentfulImage = {
@@ -31,6 +34,7 @@ export type AboutPageType = {
   title: string;
   subTitle: string;
   content: string;
+  metadata: Metadata;
 };
 
 export type ProductType = {
